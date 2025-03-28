@@ -5,12 +5,18 @@ namespace Hello_Avalonia;
 
 public partial class MainWindow : Window
 {
-    private readonly MainViewModel _viewModel;
+    private MainViewModel _viewModel;
 
-    public MainWindow(MainViewModel viewModel)
+    // this declaration is required to run designer
+    public MainWindow()
     {
         InitializeComponent();
 
+        _viewModel = new MainViewModel();
+    }
+
+    public MainWindow(MainViewModel viewModel) : this()
+    {
         _viewModel = viewModel;
         DataContext = _viewModel;
 
