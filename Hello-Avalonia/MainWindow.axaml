@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:Hello_Avalonia.ViewModel"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Hello_Avalonia.MainWindow"
+        Title="Hello Avalonia" Height="500" Width="800" FontSize="20">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+                
+        <Menu FontSize="20">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Save Customers" />
+                <MenuItem Header="_Save Products" />
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Open Calculator" />
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="_Customers" />
+                <MenuItem Header="_Products" />
+            </MenuItem>
+        </Menu>
+        
+        <!--
+        <StatusBar Grid.Row="3">
+            <StatusBarItem FontSize="20" Content=" (c) Wired Brain Coffee"/>
+        </StatusBar>
+        -->
+    </Grid>
+</Window>
