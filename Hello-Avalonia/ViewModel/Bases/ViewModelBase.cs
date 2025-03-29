@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Hello_Avalonia
+namespace HelloAvalonia.ViewModel.Bases
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

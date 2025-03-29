@@ -1,7 +1,8 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using HelloAvalonia.ViewModel;
 
-namespace Hello_Avalonia;
+namespace HelloAvalonia;
 
 public partial class MainWindow : Window
 {

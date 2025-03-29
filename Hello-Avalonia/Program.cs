@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace Hello_Avalonia;
+namespace HelloAvalonia;
 
 class Program
 {

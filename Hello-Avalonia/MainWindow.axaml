@@ -2,12 +2,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:controls="clr-namespace:Hello_Avalonia.Controls"
-        xmlns:viewModel="clr-namespace:Hello_Avalonia.ViewModel"
+        xmlns:controls="clr-namespace:HelloAvalonia.Controls"
+        xmlns:viewModel="clr-namespace:HelloAvalonia.ViewModel"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Hello_Avalonia.MainWindow"
+        x:Class="HelloAvalonia.MainWindow"
+        x:CompileBindings="True" x:DataType="viewModel:MainViewModel"
         Title="Customers App" Height="500" Width="800" FontSize="20">
-    <Grid>
+
+  <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -30,7 +32,9 @@
         </Menu>
 
         <controls:HeaderControl Grid.Row="1" />
-      
+
+        <ContentControl Grid.Row="2" Content="{Binding SelectedViewModel}"/>
+    
         <!--
         <StatusBar Grid.Row="3">
             <StatusBarItem FontSize="20" Content=" (c) Wired Brain Coffee"/>

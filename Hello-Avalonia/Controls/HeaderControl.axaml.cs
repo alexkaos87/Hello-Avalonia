@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace Hello_Avalonia.Controls;
+namespace HelloAvalonia.Controls;
 
 public partial class HeaderControl : UserControl
 {

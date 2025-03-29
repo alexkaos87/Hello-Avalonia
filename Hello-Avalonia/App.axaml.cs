@@ -1,11 +1,11 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Hello_Avalonia.Extensions;
+using HelloAvalonia.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Hello_Avalonia;
+namespace HelloAvalonia;
 
 public partial class App : Application
 {

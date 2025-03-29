@@ -1,6 +1,7 @@
+using HelloAvalonia.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Hello_Avalonia.Extensions
+namespace HelloAvalonia.Extensions
 {
     public static class ServiceCollectionExtensions
     {
