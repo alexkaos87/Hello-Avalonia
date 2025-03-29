@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace HelloAvalonia;
+namespace HelloAvalonia.View;
 
 public partial class ProductsView : UserControl
 {

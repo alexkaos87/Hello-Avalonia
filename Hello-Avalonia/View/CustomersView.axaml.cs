@@ -1,7 +1,6 @@
 using Avalonia.Controls;
 
-namespace HelloAvalonia;
-
+namespace HelloAvalonia.View;
 public partial class CustomersView : UserControl
 {
     public CustomersView()

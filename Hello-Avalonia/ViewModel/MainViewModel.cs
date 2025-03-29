@@ -6,10 +6,15 @@ namespace HelloAvalonia.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
+        private readonly CustomersViewModel _customersViewModel;
+        private readonly ProductsViewModel _productsViewModel;
         private ViewModelBase? _selectedViewModel;
 
-        public MainViewModel()
+        public MainViewModel(CustomersViewModel customersViewModel, ProductsViewModel productsViewModel)
         {
+            _customersViewModel = customersViewModel;
+            _productsViewModel = productsViewModel;
+            _selectedViewModel = _customersViewModel;
             SelectViewModelCommand = new(SelectViewModel);
             SaveCollectionCommand = new(SaveCollection);
         }
@@ -27,6 +32,10 @@ namespace HelloAvalonia.ViewModel
         public DelegateCommand SelectViewModelCommand { get; }
 
         public DelegateCommand SaveCollectionCommand { get; }
+
+        public CustomersViewModel CustomersViewModel => _customersViewModel;
+
+        public ProductsViewModel ProductsViewModel => _productsViewModel;
 
         public async override Task LoadAsync()
         {

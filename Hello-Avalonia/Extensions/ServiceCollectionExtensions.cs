@@ -9,7 +9,9 @@ namespace HelloAvalonia.Extensions
         {
             return services
                 .AddTransient<MainWindow>()
-                .AddTransient<MainViewModel>();
+                .AddTransient<MainViewModel>()
+                .AddTransient<CustomersViewModel>()
+                .AddTransient<ProductsViewModel>();
         }
     }
 }

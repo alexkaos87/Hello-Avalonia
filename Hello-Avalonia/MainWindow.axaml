@@ -3,13 +3,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:HelloAvalonia.Controls"
+        xmlns:view="clr-namespace:HelloAvalonia.View"
         xmlns:viewModel="clr-namespace:HelloAvalonia.ViewModel"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="HelloAvalonia.MainWindow"
-        x:CompileBindings="True" x:DataType="viewModel:MainViewModel"
+        x:CompileBindings="True"
+        x:DataType="viewModel:MainViewModel"
         Title="Customers App" Height="500" Width="800" FontSize="20">
-
-  <Grid>
+  <Window.DataTemplates>
+      <DataTemplate DataType="{x:Type viewModel:CustomersViewModel}">
+        <view:CustomersView/>
+      </DataTemplate>
+      <DataTemplate DataType="{x:Type viewModel:ProductsViewModel}">
+        <view:ProductsView/>
+      </DataTemplate>
+  </Window.DataTemplates>
+  
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -19,15 +29,15 @@
                 
         <Menu FontSize="20">
             <MenuItem Header="_File">
-                <MenuItem Header="_Save Customers" />
-                <MenuItem Header="_Save Products" />
+                <MenuItem Header="_Save Customers" Command="{Binding SaveCollectionCommand}" CommandParameter="{Binding CustomersViewModel}" />
+                <MenuItem Header="_Save Products" Command="{Binding SaveCollectionCommand}" CommandParameter="{Binding ProductsViewModel}" />
             </MenuItem>
             <MenuItem Header="_Tools">
                 <MenuItem Header="_Open Calculator" />
             </MenuItem>
             <MenuItem Header="_View">
-                <MenuItem Header="_Customers" />
-                <MenuItem Header="_Products" />
+                <MenuItem Header="_Customers" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding CustomersViewModel}" />
+                <MenuItem Header="_Products" Command="{Binding SelectViewModelCommand}" CommandParameter="{Binding ProductsViewModel}" />
             </MenuItem>
         </Menu>
 

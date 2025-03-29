@@ -13,7 +13,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        _viewModel = new MainViewModel();
+        _viewModel = new(new(), new());
     }
 
     public MainWindow(MainViewModel viewModel) : this()
