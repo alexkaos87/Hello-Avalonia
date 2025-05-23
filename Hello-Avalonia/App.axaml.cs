@@ -18,6 +18,9 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
+            // Use DataGrid
+            new Avalonia.Controls.DataGrid();
+
             // Composition root of the dependencies
             using var host = Host.CreateDefaultBuilder()
                 .UseDefaultServiceProvider((context, options) =>

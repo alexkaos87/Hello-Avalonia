@@ -3,7 +3,9 @@ using HelloAvalonia.Data;
 using HelloAvalonia.Model;
 using HelloAvalonia.ViewModel.Bases;
 using HelloAvalonia.ViewModel.Items;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -64,13 +66,30 @@ namespace HelloAvalonia.ViewModel
             }
 
             await Task.Delay(10);
-            // TODO : load customers
+
+            Customers.Add(new(new Customer { FirstName = "Bob", LastName = "Black", Id = 1, IsDeveloper = true }));
+            Customers.Add(new(new Customer { FirstName = "Jack", LastName = "White", Id = 2, IsDeveloper = true }));
+            Customers.Add(new(new Customer { FirstName = "Alice", LastName = "Red", Id = 3, IsDeveloper = false }));
         }
 
         public async override Task SaveList()
         {
             await LoadAsync();
-            // TODO : save customers
+
+            var customers = new List<Customer>();
+            foreach (var customer in Customers)
+            {
+                customers.Add(new Customer
+                {
+                    Id = customer.Id,
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    IsDeveloper = customer.IsDeveloper
+                });
+            }
+
+            var filePath = Path.Combine(Path.GetTempPath(), "customers.json");
+            JsonHelper.ToFile(filePath, customers);
         }
 
         private void Add(object? parameter)

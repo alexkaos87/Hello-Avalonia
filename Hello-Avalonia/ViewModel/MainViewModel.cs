@@ -52,7 +52,9 @@ namespace HelloAvalonia.ViewModel
         private async void SaveCollection(object? parameter)
         {
             if (parameter is ViewModelBase viewModel)
+            {
                 await viewModel.SaveList();
+            }
         }
     }
 }

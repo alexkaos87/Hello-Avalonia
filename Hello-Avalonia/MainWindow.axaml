@@ -44,11 +44,12 @@
         <controls:HeaderControl Grid.Row="1" />
 
         <ContentControl Grid.Row="2" Content="{Binding SelectedViewModel}"/>
-    
-        <!--
-        <StatusBar Grid.Row="3">
-            <StatusBarItem FontSize="20" Content=" (c) Wired Brain Coffee"/>
-        </StatusBar>
-        -->
+
+        <Border Grid.Row="3" Background="{DynamicResource SystemControlBackgroundBaseLowBrush}" Height="30">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                <TextBlock FontSize="20" Text=" (c) Wired Brain Coffee"/>
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Window>

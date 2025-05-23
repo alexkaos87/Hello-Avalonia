@@ -12,6 +12,7 @@ namespace HelloAvalonia.ViewModel.Items
         public string? Name => _model.Name;
 
         public string? Description => _model.Description;
+        
         public Product Product
         {
             get

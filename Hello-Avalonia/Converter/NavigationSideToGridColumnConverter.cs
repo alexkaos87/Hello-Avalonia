@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace HelloAvalonia.Converter
 {
-    internal class NavigationSideToGridColumnConverter : IValueConverter
+    public class NavigationSideToGridColumnConverter : IValueConverter
     {
         public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
