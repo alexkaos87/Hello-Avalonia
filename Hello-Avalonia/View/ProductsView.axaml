@@ -6,8 +6,34 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="HelloAvalonia.View.ProductsView"
              x:CompileBindings="True" x:DataType="viewModel:ProductsViewModel">
-  
-  <Grid>
-    <DataGrid ItemsSource="{Binding Products}" AutoGenerateColumns="True" Margin="10" IsReadOnly="True"/>
-  </Grid>
+
+  <StackPanel Margin="10">
+    <!-- Headers -->
+    <Grid Margin="5,0,0,5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="2*"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Column="0" Text="Name" FontWeight="Bold"/>
+      <TextBlock Grid.Column="1" Text="Description" FontWeight="Bold"/>
+    </Grid>
+
+    <!-- Products -->
+    <ItemsControl ItemsSource="{Binding Products}" Margin="10">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,0,5" Padding="5">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+              </Grid.ColumnDefinitions>
+              <TextBlock Grid.Column="0" Text="{Binding Name}" FontWeight="Bold" Margin="0,0,10,0"/>
+              <TextBlock Grid.Column="1" Text="{Binding Description}" TextWrapping="Wrap"/>
+            </Grid>
+          </Border>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
 </UserControl>
